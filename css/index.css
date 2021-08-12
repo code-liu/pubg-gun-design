@@ -40,7 +40,6 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: normal
 }
 
-
 input,textarea,select {
   font-family: inherit;
   font-size: inherit;
@@ -61,6 +60,18 @@ a {
 * {
   outline: 0
 }
+
+html,
+body {
+  color: #fff;
+  background-color: #141414;
+  width: 100%;
+  font-size: .2rem;
+  overflow-x: auto;
+  overflow-y: auto;
+  margin: 0 auto
+}
+
 .clearfix:after {
   visibility: hidden;
   display: block;
@@ -76,14 +87,12 @@ a {
   float: right;
 }
 
-html,body {
-  color: #fff;
-  background-color: #141414;
-  width: 100%;
-  font-size: .2rem;
-  overflow-x: auto;
-  overflow-y: auto;
-  margin: 0 auto
+.hide {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  display: block;
+  visibility: hidden
 }
 
 .kv {
@@ -98,7 +107,6 @@ html,body {
 .pdp {
   width: 100%;
   position: relative;
-  font-size: 0;
   background-color: rgb(221, 250, 215);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -109,7 +117,6 @@ html,body {
 .track {
   width: 100%;
   position: relative;
-  font-size: 0;
   background-color: rgb(242, 215, 250);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -120,7 +127,6 @@ html,body {
 .prize {
   width: 100%;
   position: relative;
-  font-size: 0;
   background-color: rgb(222, 250, 215);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -131,7 +137,6 @@ html,body {
 .selection {
   width: 100%;
   position: relative;
-  font-size: 0;
   background-color: rgb(222, 215, 250);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -142,7 +147,6 @@ html,body {
 .rules {
   width: 100%;
   position: relative;
-  font-size: 0;
   background-color: rgb(250, 215, 215);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -170,9 +174,13 @@ html,body {
   transform: translateY(-50%);
   box-sizing: border-box;
 }
-.fixed_menu li,
+.fixed_menu .menu_trigger,
 .fixed_menu .top{
   padding: 10px 20px;
   margin-bottom: 10px;
   background-color: rgb(0, 26, 255);
+}
+
+.fixed_menu .menu_trigger.active{
+  background-color: aquamarine;
 }
