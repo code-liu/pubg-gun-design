@@ -54,25 +54,19 @@
     })
 
     function isScrollChangeFixedMenu() {
-      var winPos = $(window).scrollTop(),
-        NodePos = [
-          $('#track').offset().top - 70,
-          $('#prize').offset().top - 70,
-          $('#selection').offset().top - 70,
-          $('#rules').offset().top - 70
-        ],
-        length = NodePos .length; 
+      var scrollPos,
+        i,
+        l,
+        navItem = $('.j_menu_trigger'),
+        scrollItems = [$('#track'), $('#prize'), $('#selection'), $('#rules')];
+      scrollPos = (document.documentElement && document.documentElement.scrollTop) || document.body.scrollTop;
+      l = navItem.length;
 
-      if (winPos <= NodePos[1]) {
-        $('.j_menu_trigger').removeClass('active');
-        $('.j_menu_trigger:nth-child(1)').addClass('active');
-      } else {
-        for (var i = 1; i < length; i++) {
-          if ((i < length -1 && winPos < NodePos[i+1] && winPos >= NodePos[i]) || (i == length -1 && winPos <= NodePos[i])) {
-            $('.j_menu_trigger').removeClass('active');
-            $('.j_menu_trigger:nth-child('+ (i + 1) +')').addClass('active');
-            break;
-          }
+      for (i = 0; l > i; i++) {
+        var item = scrollItems[i];
+        if (scrollPos > (item.offset().top - 80)) {
+          navItem.removeClass('active');
+          $(navItem[i]).addClass('active');
         }
       }
     }

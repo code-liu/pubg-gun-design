@@ -169,18 +169,19 @@ body {
   position: fixed;
   top: 50%;
   z-index: 199;
-  width: calc(150/1920*100vw);
   left: calc(30/1920*100vw);
   transform: translateY(-50%);
   box-sizing: border-box;
 }
 .fixed_menu .menu_trigger,
 .fixed_menu .top{
+  width: calc(150/1920*100vw);
   padding: 10px 20px;
   margin-bottom: 10px;
   background-color: rgb(0, 26, 255);
 }
 
 .fixed_menu .menu_trigger.active{
+  width: calc(200/1920*100vw);
   background-color: aquamarine;
 }
